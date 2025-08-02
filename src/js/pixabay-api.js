@@ -15,10 +15,7 @@ export async function getImagesByQuery(query, page = 1, perPage) {
     page
   };
   try {
-    showLoader();
-    const res = await axios(BASE_URL, { params });
-    console.log(res);
-    
+    showLoader();   
     const { data } = await axios(BASE_URL, { params });
     hideLoader();
     return data; 

@@ -62,7 +62,6 @@ function handleSubmit(event) {
       renderGallery(data.hits);
       
       totalPages = Math.ceil(data.totalHits / perPage);
-      console.log(totalPages);
       
       if (page < totalPages) { 
         showLoadMoreButton();
@@ -88,7 +87,6 @@ async function onClickHandle() {
   try {
     loadMoreButton.disabled = true;
     const data = await getImagesByQuery(currentQuery, page, perPage);
-    console.log(currentQuery, page, data.hits);
     renderGallery(data.hits);
     
     const { height: cardHeight } = document
